@@ -45,4 +45,5 @@ public class OpenAPISchema: Encodable {
         case required
         case properties
     }
+
 }

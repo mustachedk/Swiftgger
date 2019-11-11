@@ -26,10 +26,8 @@ class OpenAPISecurityBuilder {
         for authorization in authorizations {
 
             switch authorization {
-            case .basic(description: let description):
+            case .basic(description: _):
                 let basicAuth = OpenAPISecurityScheme(type: "http",
-                                                      description: description,
-                                                      parameterLocation: .header,
                                                       scheme: "basic")
 
                 openAPISecuritySchema["auth_basic"] = basicAuth
