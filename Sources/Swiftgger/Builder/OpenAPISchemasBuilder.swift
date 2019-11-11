@@ -76,7 +76,7 @@ class OpenAPISchemasBuilder {
         }
     }
 
-    private func getRequiredProperties(properties: Mirror.Children) -> [String] {
+    private func getRequiredProperties(properties: Mirror.Children) -> [String]? {
         var array: [String] = []
 
         for property in properties {
@@ -85,7 +85,7 @@ class OpenAPISchemasBuilder {
             }
         }
 
-        return array
+        return array.isEmpty ? nil : array
     }
 
     private func unwrap<T>(_ any: T) -> Any {
